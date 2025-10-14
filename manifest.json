@@ -1,0 +1,10 @@
+{ 
+   "name": "Eclipso",
+   "version": "1.0",
+   "manifest_version": 2,
+   "description": "Extension to track time spent on websites and send notifications",
+   "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    }
+}
