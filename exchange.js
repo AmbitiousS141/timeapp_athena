@@ -1,9 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+
+const apiKey = process.env.API_KEY;
+
+console.log("Your API key is:", apiKey);
+
 const amount = document.getElementById('amount');
 const currency = document.getElementById('currency');
 const convert = document.getElementById('convert');
 const result = document.getElementById('result');
 
-const apiKey=""
 const apiUrl="https://api.api-ninjas.com/v1/exchangerate?pair=USD_"
 
 convert.addEventListener('click', () => {
