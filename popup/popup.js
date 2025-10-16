@@ -4,18 +4,34 @@ const startDateElement = document.getElementById("startDate")
 const endDateElement = document.getElementById("endDate")
 
 // Button elements
-const startButtonElement = document.getElementById("startButton")
-const stopButtonElement = document.getElementById("stopButton")
+const startButton = document.getElementById("startButton")
+const stopButton = document.getElementById("stopButton")
 
-startButton.onclick = function() {
-    if (startDateElement.value) {
-        console.log("Start date element:", startDateElement.value);
-    } else {
-        console.log("Start date is invalid.");
+startButton.onclick = () => { // before, you had it set up as function() {. This new version is cleaner.
+    const prefs = {
+        locationId: locationIdElement.value,
+        startDate: startDateElement.value,
+        endDate: endDateElement.value
     }
-    
+    chrome.runtime.sendMessage({ event: 'onStart', prefs })   
 }
 
-stopButton.onclick = function() {
-    console.log("End date:", endDateElement.value);
+stopButton.onclick = () => {
+    chrome.runtime.sendMessage({ event: 'onStop' })
 }
+
+chrome.storage.local.get(["locationID", "startDate", "endDate"], (result) => {
+    const { locationId, startDate, endDate } = result; // "destructuring"
+
+    if (locationId) { // if locationId is valid... 
+        locationIdElement.value = locationId // ...then set the value to locationId.
+    }
+
+    if (startDate) {
+        startDateElement.value = startDate
+    }
+
+    if (endDate) {
+        endDateElement.value = endDate
+    }
+})

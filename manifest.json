@@ -1,0 +1,22 @@
+{
+    "name": "Eclipso",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Extension that helps you keep track of how you spend your day and reminds you when it's time to sleep.",
+    "action": {
+        "default_icon": "images/icon.png",
+        "default_popup": "popup/popup.html"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "permissions": [
+        "storage",
+        "tabs",
+        "activeTab"
+    ],
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
