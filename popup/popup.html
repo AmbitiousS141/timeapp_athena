@@ -6,6 +6,15 @@
     <title>Eclipso</title>
     <link rel="stylesheet" href="bulma.min.css" /> 
 </head>
+<style> 
+    #startButton, #stopButton { 
+        width: 92% 
+    }
+
+    .input {
+        width: 53%
+    }
+</style>
 <body>
     
     <div class="container m-3"> 
@@ -22,31 +31,37 @@
         <div class="field">
             <label class="label">Location ID</label>
             <div class="select">
-                <select></select>
+                <select id="locationID">
+                    <option value="los_angeles">Los Angeles</option>
+                    <option value="seattle">Seattle</option>
+                </select>
             </div>
         </div>
 
         <div class="field">
             <label class="label">Start Date</label>
             <div class="control">
-                <input type="date" class="input">
+                <input type="date" class="input" id="startDate">
             </div>
         </div>
 
         <div class="field">
             <label class="label">End Date</label>
             <div class="control">
-                <input type="date" class="input">
+                <input type="date" class="input" id="endDate">
             </div>
         </div>
     </div>
 
     <div class="container m-3">
-        <button class="button is-success is-fullwidth">Save & Start</button>
+        <button class="button is-success" id="startButton">Save & Start</button>
     </div>
 
     <div class="container m-3">
-        <button class="button is-danger is-fullwidth">Stop</button>
+        <button class="button is-danger" id="stopButton">Stop</button>
     </div>
 </body>
+
+<script src="popup.js"></script>
+
 </html>
