@@ -1,64 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eclipso</title>
     <link rel="stylesheet" href="bulma.min.css" /> 
+    <link rel="stylesheet" href="popup.css" />
 </head>
-<style> 
-    #startButton, #stopButton { 
-        width: 92% 
-    }
 
-    .input {
-        width: 53%
-    }
-</style>
 <body>
     
-    <div class="container m-3"> 
-        <h1 class="title">Eclipso</h1>
-
-        <div class="field">
-            <label class="label">Status</label>
-            <span class="tag is-success">Running</span>
-            <span class="tag is-danger">Stopped</span>
-        </div>
-    </div>
-
-    <div class="container m-3">
-        <div class="field">
-            <label class="label">Location ID</label>
-            <div class="select">
-                <select id="locationID">
-                    <option value="los_angeles">Los Angeles</option>
-                    <option value="seattle">Seattle</option>
-                </select>
+    <div class="popup-box">
+        <div class="container m-3">
+            <div class="is-flex">
+                <img 
+                  src="../images/icon.png" 
+                  class="logo-image mr-3" 
+                  alt="Eclipso logo" 
+                >
+                <h1 class="title">Eclipso</h1>
             </div>
-        </div>
 
-        <div class="field">
-            <label class="label">Start Date</label>
-            <div class="control">
-                <input type="date" class="input" id="startDate">
+            <div class="field">
+                <label class="label">Timer</label>
+                <div class="control has-text-left">
+                    <input type="time" class="input" id="startTime">
+                </div>
             </div>
+
+
+        <div class="container has-text-left">
+            <button class="button" id="startButton">🌟 Start Focus Session! 🌟</button>
         </div>
-
-        <div class="field">
-            <label class="label">End Date</label>
-            <div class="control">
-                <input type="date" class="input" id="endDate">
-            </div>
-        </div>
-    </div>
-
-    <div class="container m-3">
-        <button class="button is-success" id="startButton">Save & Start</button>
-    </div>
-
-    <div class="container m-3">
-        <button class="button is-danger" id="stopButton">Stop</button>
     </div>
 </body>
 
