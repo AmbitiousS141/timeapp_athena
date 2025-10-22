@@ -24,11 +24,20 @@
 
             <div class="field">
                 <label class="label">Timer</label>
-                <div class="control has-text-left">
-                    <input type="time" class="input" id="startTime">
+                <div class="field is-grouped">
+                    <div class="control has-text-left">
+                        <input type="number" class="input" id="hoursInput" placeholder="Hours" min="0" max="23" step="1">
+                    </div>
+                    <div class="control has-text-left">
+                        <input type="number" class="input" id="minutesInput" placeholder="Minutes" min="0" max="59" step="1">
+                    </div>
                 </div>
             </div>
-
+            
+            <div class="is-flex">
+                <p id="countdown" class="has-text-weight-bold mr-3"></p>
+                <p id="resetButton" class="has-text-weight-bold">Reset?</p>
+            </div>
 
         <div class="container has-text-left">
             <button class="button" id="startButton">🌟 Start Focus Session! 🌟</button>
