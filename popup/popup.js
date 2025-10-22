@@ -1,7 +1,7 @@
 let timerId = null;
 let intervalId = null;
 
-const countdownDisplay = document.getElementById("countdown");
+const countdownLook = document.getElementById("countdown");
 const hoursInput = document.getElementById("hoursInput");
 const minutesInput = document.getElementById("minutesInput");
 const resetButton = document.getElementById("resetButton");
@@ -70,7 +70,7 @@ function updateCountdown(endTime) {
   const remaining = endTime - Date.now();
 
   if (remaining <= 0) {
-    countdownDisplay.textContent = "";
+    countdownLook.textContent = "";
     return;
   }
 
@@ -78,7 +78,7 @@ function updateCountdown(endTime) {
   const minutes = Math.floor((remaining / 1000 / 60) % 60);
   const seconds = Math.floor((remaining / 1000) % 60);
 
-  countdownDisplay.textContent = 
+  countdownLook.textContent = 
     `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 }
 
@@ -95,7 +95,7 @@ function timerlessLook() {
   minutesInput.disabled = false;
   resetButton.style.display = "none";
   startButton.textContent = "🌟 Start Focus Session! 🌟";
-  countdownDisplay.textContent = "";
+  countdownLook.textContent = "";
 }
 
 function timerfulLook() {
