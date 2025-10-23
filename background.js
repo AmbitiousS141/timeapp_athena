@@ -1,29 +1,30 @@
-import fetchLocations from "./api/fetchLocations.js"
+chrome.runtime.onMessage.addListener((message) => {
+  if (message.type === "START_TIMER") {
+    const { endTime } = message;
+    chrome.alarms.clearAll(() => {
+        showNotification("Eclipso", "Your focus session has started! 🌟");
+        chrome.alarms.create("focusSessionEnd", { when: endTime });
+    });
+  }
 
-chrome.runtime.onInstalled.addListener(details => {
-    fetchLocations()
-})
+  if (message.type === "STOP_TIMER") {
+    chrome.alarms.clearAll();
+  }
+});
 
-chrome.runtime.onMessage.addListener(data => {
-    const { event, prefs } = data // this is so you can type "event" or "prefs" instead of "data.events"/"data.prefs" in the next lines. Called "destructuring"
-    switch (event) {
-        case 'onStop':
-            handleOnStop();
-            break;
-        case 'onStart':
-            handleOnStart(prefs);
-            break;
-        default:
-            break
-    }
-})
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === "focusSessionEnd") {
+    showNotification("Eclipso", "Well done! Focus session has ended, you can take a break now <3");
+    chrome.storage.local.remove(["focusEndTime"]);
+  }
+});
 
-const handleOnStop = () => {
-    console.log("On stop in background")
-}
-
-const handleOnStart = (prefs) => {
-    console.log("On start in background")
-    console.log("prefs received:", prefs)
-    chrome.storage.local.set(prefs)
+function showNotification(title, message) {
+  chrome.notifications.create({
+    type: "basic",
+    iconUrl: "images/icon.png",
+    title,
+    message,
+    priority: 2
+  });
 }

@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Didot, serif;
+    min-height: 100vh;
+    background: linear-gradient(#ddf4fa, #8adff7);
+}
+
+.main-header {
+    align-items: center;
+    font-size: 1.2rem;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1.8rem;
+}
+
+.logo-image {
+    width: 4rem; 
+    height: 4rem;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.content-box {
+    width: 90%;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 12px;
+    background: linear-gradient(#efe4ff, #dfcdfa);
+    border: 6px solid #a28ad6;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.tab-button {
+    /* width: 2rem; if the thing under it doesn't work*/
+    justify-content: flex-start;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 6px;
+    background-color: #dabff5;
+    font-family: Didot, serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #a28ad6;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.tab-words {
+    display: none;
+    font-family: Didot, serif;
+    font-size: 1.2rem;
+}
+
+.tab-words[data-tab="1"] {
+    display: block;
+}

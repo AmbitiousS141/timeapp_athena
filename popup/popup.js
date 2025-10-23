@@ -24,11 +24,19 @@ startButton.onclick = () => {
     return;
 }
   const totalMs = (hours * 60 + minutes) * 60 * 1000;
+  const endTime = Date.now() + totalMs 
 
-  // starts timer
+  chrome.storage.local.set({ focusEndTime: endTime });
+
+  chrome.runtime.sendMessage({ type: "START_TIMER", endTime });
+
   timerfulLook();
-  startTimer(totalMs);
 };
+
+document.getElementById('logoSection').addEventListener('click', () => {
+  const websiteURL = 'https://website.com'; // UPDATE THIS LATER!
+  chrome.tabs.create({ url: websiteURL });
+});
 
 resetButton.onclick = () => {
   clearInterval(intervalId);
@@ -36,6 +44,7 @@ resetButton.onclick = () => {
   timerId = null;
   timerlessLook();
   chrome.storage.local.remove(["focusEndTime"]);
+  chrome.runtime.sendMessage({ type: "STOP_TIMER" });
 };
 
 window.onload = () => {
