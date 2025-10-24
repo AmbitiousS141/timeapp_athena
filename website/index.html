@@ -26,8 +26,16 @@
         </div>
         <div class="tab-content">
             <div class="tab-words" data-tab="1">
-                <h1>Stuff 1</h1>
-                <p>stuff stuff stuff 1</p>
+                <p><i>Hello, I'm Eclipso!</i> I'm here to help you balance your time through sun and moon :D I come as a browser extension with a popup where you can start focus sessions that block distracting websites, as well as an options page to edit your preferences: what websites you'd like to block, and when you'd like to receive a bedtime nudge.</p>
+                <p>--<br></p>
+                <p>To use Eclipso, head on over to the Work tab and list the websites that you usually can't resist scrolling on. Whenever you sit down at your desk for a focus session, open the popup and set an amount of time that you want to spend on work. During that time, the websites will be off-bounds. You can also head to the Sleep tab and set a time at which you'd like to receive a reminder to put the device away and go to sleep. Hover over Eclipso in the bottom right corner if you need anything :D</p>
+                <p>I built Eclipso because... well, in my mom's own words, I built this for myself. I needed it TT Besides that though, I was curious to try my hand in this after downloading a few other extensions and being unsatisfied with their features. Eclipso runs all the features I need in the the way I like best. I've also built many websites using HTML and CSS, but JavaScript was used sparingly. This was a real big push out of my comfort zone, from which I learned a lot and gained confidence. The nights spent on this are proof of it - but now that it's over, Eclipso is here to make sure I make up for that lost sleep TT</p>
+                <p>Essentially, how the code works is that when a focus session is started in the popup, the end time of the focus session is calculated and shown in the popup as a timer as well as sent to the background.js file so it's not lost as soon as the popup is closed. Background.js uses the end time to send a notification when the focus session is over. Also, if the reset button is pressed, the timer is stopped and the end time is deleted from storage to not send that notification. During focus sessions, it checks the URLs of each tab so that if a website among the inputted list of blocked ones from the options page is opened, the tab is removed and a notification to stay on trach is sent. Another tab in the options page lets people choose a time to get a bedtime notification. This is again sent to background.js, where an alarm is set to trigger a notification either that day at the given time, or adding a day to the date if the time has already passed on the current day.</p>
+                <p>GitHub repo here: <a href="https://github.com/AmbitiousS141/timeapp_athena">https://github.com/AmbitiousS141/timeapp_athena</a></p>
+                <p><br> </p>
+                <p><br> </p>
+                <p><br> </p>
+                <p><br> </p>
             </div>
             <div class="tab-words" data-tab="2">
                 <div class="website-blocker">
