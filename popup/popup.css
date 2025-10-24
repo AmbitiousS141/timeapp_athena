@@ -19,6 +19,10 @@ html, body {
     margin-bottom: 0.8rem;
 }
 
+#logoSection {
+    cursor: pointer;
+}
+
 #countdown {
     color: #a28ad6;
 }

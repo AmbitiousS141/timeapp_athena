@@ -25,9 +25,41 @@
             <button class="tab-button mr-1" data-tab="3">🌙 Sleep&nbsp;</button>
         </div>
         <div class="tab-content">
-            <p class="tab-words" data-tab="1">stuff stuff stuff 1</p>
-            <p class="tab-words" data-tab="2">stuff stuff stuff 2</p>
-            <p class="tab-words" data-tab="3">stuff stuff stuff 3</p>
+            <div class="tab-words" data-tab="1">
+                <h1>Stuff 1</h1>
+                <p>stuff stuff stuff 1</p>
+            </div>
+            <div class="tab-words" data-tab="2">
+                <div class="website-blocker">
+                    <p>Sometimes when self-discipline is not enough, you just need a bit of help to stay on task.</p>
+                    <p>With Eclipso's website blocker, you can make sure you stay locked in on work by inputting websites that you're not allowed to access during focus sessions. As long as the timer is running, the distracting tab will be closed for you and a nudging notification will be sent.</p>
+                    <p>How the code works: when you start a focus session, Eclipso calculates and stores the time at which it will end as well as the list of blocked websites. Every time a tab is opened or changed, the code checks if its URL matches any of the blocked sites. If a match is found... DEATH BY DELETION.</p>
+                    <p>Note that after you click "save", it will show "saaved!" for a few seconds before returning to the way it looked before. This doesn't mean the value has been lost :D it's all good!</p>
+                    <p class="mb-2">Type in the websites that should be blocked during focus sessions! One per line:</p>
+                    <textarea id="blocked-sites-input" class="textarea" rows="5" placeholder="e.g. discord.com&#10;pinterest.com"></textarea>
+                    <button id="save-blocked-sites" class="button is-small">Save</button>
+                </div>
+            </div>
+            <div class="tab-words" data-tab="3">
+                <p>Sleep is crucial to stay both physically and emotionally healthy. That's why it's really important to get a good night of sleep!</p>
+                <p>Time flies when you're having fun, or when you're focused. Or maybe you're doomscrolling and you need a reminder that it's getting late. Eclipso will notify you to get ready for bed at the time you set here!</p>
+                <p>How the code works: your input is saved in your browser's local storage and Eclipso calculates when that time occurs next to schedule a notification. The program listens for the alarm, when it'll show a notification, then sets another alarm for the next day. Aka, don't ruin a good night of sleep with a bad next one!</p>
+                <p>Again, note that after you click "save", it will show "saaved!" for a few seconds before returning to the way it looked before. The notification will still pop up at that time a-okay until you change it.</p>
+                <p>Enter the military time at which you'd like to receive a notification to go to sleep:</p>
+                <input type="time" id="sleepTime" min="00:00" max="23:59" required>
+                <button id="save-sleep-time" class="button is-small">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="questions-feedback">
+        <img 
+            src="../images/eclipso-question.png" 
+            class="eclipso-mascot" 
+            alt="Eclipso eclipso-mascot" 
+        >
+        <div class="help-box">
+            <p><i>Having issues or want to suggest improvements? Message @stephi (username stephanieu14136) on Slack!</i></p>
         </div>
     </div>
 <script src="script.js" defer></script>

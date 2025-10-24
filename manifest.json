@@ -11,6 +11,9 @@
         "service_worker": "background.js",
         "type": "module"
     },
+
+    "options_page": "website/index.html",
+
     "permissions": [
         "storage",
         "tabs",

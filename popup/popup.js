@@ -24,18 +24,15 @@ startButton.onclick = () => {
     return;
 }
   const totalMs = (hours * 60 + minutes) * 60 * 1000;
+  startTimer(totalMs)
   const endTime = Date.now() + totalMs 
-
   chrome.storage.local.set({ focusEndTime: endTime });
-
   chrome.runtime.sendMessage({ type: "START_TIMER", endTime });
-
   timerfulLook();
 };
 
 document.getElementById('logoSection').addEventListener('click', () => {
-  const websiteURL = 'https://website.com'; // UPDATE THIS LATER!
-  chrome.tabs.create({ url: websiteURL });
+  chrome.runtime.openOptionsPage()
 });
 
 resetButton.onclick = () => {
